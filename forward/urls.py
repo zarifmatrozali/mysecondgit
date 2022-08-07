@@ -14,8 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from django.urls import re_path,include
+from django.urls import re_path,path, include
 from hello_world import views
 from forward.settings import DEBUG, STATIC_URL, STATIC_DIR, MEDIA_URL,MEDIA_ROOT
 from django.conf.urls.static import static
@@ -27,7 +26,7 @@ urlpatterns = [
     re_path(r'^special/',views.special,name='special'),
     re_path(r'^hello_world/',include('hello_world.urls')),
     # re_path(r'^combine/',include('combine.urls')),
-    # re_path(r'^book/',include('book.urls')),
+    re_path(r'^book/',include('book.urls')),
     re_path(r'^logout/$',views.user_logout, name='logout')
 ]
 
