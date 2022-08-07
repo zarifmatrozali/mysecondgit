@@ -25,7 +25,7 @@ urlpatterns = [
     re_path(r'^$',views.index,name='index'),
     re_path(r'^special/',views.special,name='special'),
     re_path(r'^hello_world/',include('hello_world.urls')),
-    # re_path(r'^combine/',include('combine.urls')),
+    re_path(r'^combine/',include('combine.urls')),
     re_path(r'^book/',include('book.urls')),
     re_path(r'^logout/$',views.user_logout, name='logout')
 ]
